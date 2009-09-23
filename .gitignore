@@ -2,3 +2,8 @@
 *.aux
 *.log
 *.pdf
+*.log
+*.d
+*.fls
+*.run*
+*.toc*
