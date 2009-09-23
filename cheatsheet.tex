@@ -3,12 +3,14 @@
 \usepackage{amssymb, amsmath}
 \usepackage[pdftex]{graphicx}
 \usepackage{pdfpages}
-%\usepackage{hyperref}
 \usepackage[colorlinks=true,linkcolor=black]{hyperref}
+\usepackage{float}
 
 \title{Diskrete matematiske strukturer\\
           Cheat sheet}
 \author {}
+\date{}
+
 \begin{document}
 \maketitle
 \tableofcontents
@@ -111,10 +113,30 @@
     Indhold
 \section{Sandsynlighedsregning}
   Indhold
-  \subsection{Permutationer}
-    Indhold
-  \subsection{Kombinationer}
-    Indhold
+  \subsection{Permutationer og kombinationer}
+  Indsæt en forklaring på figur \ref{fig:perm} her!
+  \begin{figure}[h!]
+  \begin{center}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    & Uden tilbagelægning & Med tilbagelægning \\
+    \hline
+    Ordnet  & $_nP_r$ & $n^r$ \\
+    \hline
+    Uordnet & $_nC_r$ & $_{n+r-1}C_r$ \\
+    \hline
+    \end{tabular}
+    \caption{Oversigt over formler for permutationer og kombinationer} \label{fig:perm}
+    \end{center}
+  \end{figure}\\
+  hvor
+  \begin{equation}
+    _nP_r=n\cdots{}(n-1)\cdots{}(n-r+1) = \frac{n!}{(n-r)!}
+  \end{equation}
+  og
+  \begin{equation}
+    _nC_r=\frac{n\cdots (n-1) \cdots (n-r+1)}{r\cdot (r-1)\cdots 1} = \frac{n!}{r!(n-r)!}
+  \end{equation}
   \subsection{Sandsynlighed}
     Indhold
   \subsection{Recurrens relationer}
