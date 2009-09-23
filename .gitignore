@@ -1,9 +1,11 @@
 *.swp
 *.aux
+*.aux.*
 *.log
 *.pdf
-*.log
 *.d
 *.fls
-*.run*
-*.toc*
+*.run
+*.run.*
+*.toc
+*.toc.*
