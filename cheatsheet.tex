@@ -331,8 +331,15 @@ og opstil et lineært ligningssystem med to ligninger og to ubekendte $u$ og $v$
       $$
       \caption{Irrefleksiv relation som boolsk matrix} \label{fig:bm3}
     \end{figure}
-
-\subsection{$R^\infty$}
+    \subsubsection{Asymmetrisk}
+    En relation er asymmetrisk, hvis og kun hvis følgende gælder:
+    \begin{equation}
+      aRb \Rightarrow b\not Ra
+    \end{equation}
+    Det kan ses på en graf, hvis der for ingen pile mellem 2 elementer, også går en pil den anden vej. Et eks. på det kan ses i figur (\ref{fig:xy1}).
+    
+    Ligeledes kan det ses i en boolsk matrix, hvis der ikke kan spejles nogen elementer.
+    \subsection{$R^\infty$}
 
 $R^\infty$ består af alle tupler i $R$, der er transitivt relateret; dvs. hvis $(x, y) \in R$
 og $(y, z) \in R$, så vil $(x, z) \in R^\infty$. Derudover gælder $R \subseteq R^\infty$.
