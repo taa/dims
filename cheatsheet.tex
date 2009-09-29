@@ -114,8 +114,15 @@
       Ved $A \wedge B = C$.
     \subsubsection{Boolsk produkt} %TODO
       Boolsk produkt $(\odot)$ mellem to boolske matricer gøres på følgende måde:
-      Lad $A = [a_{ij}]$ og $B= [b_{ij}]$ være $m \times n$ boolske matricer. Så er:
+      Lad $A = [a_{ij}]$ og $B= [b_{ij}]$ være $2 \times 2$ boolske matricer. Så er:
       Ved $A \odot B = C$.
+      $$
+      C = \begin{bmatrix}
+            (a_{1,1} \vee b_{1,1}) \vee (a_{1,2} \vee b_{2,1}) & (a_{1,1} \vee b_{1,2}) \vee (a_{1,2} \vee b_{2,2}) \\
+            (a_{2,1} \vee b_{1,1}) \vee (a_{2,2} \vee b_{2,1}) & (a_{2,1} \vee b_{1,2}) \vee (a_{2,2} \vee b_{2,2})
+      \end{bmatrix}
+      $$
+
 
 \section{Logik}
 
