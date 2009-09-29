@@ -96,66 +96,77 @@
       Boolsk produkt $(\odot)$ mellem to boolske matricer gøres på følgende måde:
       Lad $A = [a_{ij}]$ og $B= [b_{ij}]$ være $m \times n$ boolske matricer. Så er:
       Ved $A \odot B = C$.
+
 \section{Logik}
-  Indhold
-  \subsection{Regneregler}
-    \subsubsection{Boolske udtryk}
-      \begin{description}
-        \item[$\sim$ (not)] Bla bla.
-        \item[$\wedge$ (and)] Bla bla.
-        \item[$\vee$ (or)]  Bla bla.
-        \item[$\Rightarrow$ (If..then)]  Bla bla.
-        \item[$\Leftrightarrow$ (Equivalence)]  Bla bla.
-      \end{description}
-      \begin{center}
-        \begin{tabular} {|r|r||r|r|r|r|r|r|}
-          \hline
-          $p$ & $q$  & $\sim{}p$ &  $p\wedge{}q$ &  $p\vee{}q$ &  $p\downarrow{}q$  &  $p\Rightarrow{}q$  &  $p\Leftrightarrow{}q$ \\
-          \hline
-          \hline
-          S&S&F&S&S&F&S&S\\
-          \hline
-          S&F&F&F&S&F&F&F\\
-          \hline
-          F&S&S&F&S&F&S&F\\
-          \hline
-          F&F&S&F&F&S&S&S\\
-          \hline
-        \end{tabular}
-      \end{center}
-    \subsubsection{Sætninger og regler}
-      Grundregler:
-      \begin{eqnarray}
-        p \vee q &\equiv& q \vee p \\
-        p \wedge q &\equiv& q \wedge p \\
-        p \vee (q \vee r) &\equiv& (p \vee q) \vee r \\
-        p \wedge (q \wedge r) &\equiv& (p \wedge q) \wedge r \\
-        p \vee (q \wedge r) &\equiv& (p \vee q) \wedge (p \vee r) \\
-        p \wedge (q \vee r) &\equiv& (p \wedge q) \vee (p \wedge r) \\
-        p \vee p &\equiv& p \\
-        p \wedge p &\equiv& p \\
-        \sim (\sim p) &\equiv& p \\
-        \sim (p \vee q) &\equiv& (\sim p) \wedge (\sim q) \\
-        \sim (p \wedge q) &\equiv& (\sim p) \vee (\sim q) 
-      \end{eqnarray}
-      Vigtige sætninger:
-      \begin{eqnarray}
-        (p\Rightarrow q) &\equiv& ((\sim p) \vee q) \\
-        (p \Rightarrow q) &\equiv& (\sim p \Rightarrow \sim q) \\
-        (p \Leftrightarrow q) &\equiv& ((p \Rightarrow q) \wedge (q \Rightarrow p)) \\
-        \sim (p \Rightarrow q) &\equiv& (p \wedge \sim q) \\
-        \sim (p \Leftrightarrow q) &\equiv& ((p \wedge \sim q) \vee (q \wedge \sim p))
-      \end{eqnarray}
-      Flere vigtige sætninger:
-      \begin{eqnarray}
-        \sim (\forall x~P(x)) &\equiv& \exists x~\sim P(x) \\
-        \sim (\exists x~P(x)) &\equiv& \forall x~(\sim P(x)) \\
-        \exists x~(P(x) \Rightarrow Q(x)) &\equiv& \forall x~P(x) \Rightarrow \exists x~Q(x) \\
-        \exists x~(P(x) \vee Q(x)) &\equiv& \exists x~P(x) \vee \exists x~Q(x) \\
-        \forall x~(P(x) \wedge Q(x)) &\equiv& \forall x~P(x) \wedge \forall x~Q(x)
-      \end{eqnarray}
-  \subsection{Metoder for beviser}
-    Indhold
+Indhold
+
+\subsection{Regneregler}
+
+\subsubsection{Boolske udtryk}
+
+\begin{description}
+\item[$\sim$ (not)] Bla bla.
+\item[$\wedge$ (and)] Bla bla.
+\item[$\vee$ (or)]  Bla bla.
+\item[$\Rightarrow$ (If..then)]  Bla bla.
+\item[$\Leftrightarrow$ (Equivalence)]  Bla bla.
+\end{description}
+
+\begin{center}
+\begin{tabular} {|r|r||r|r|r|r|r|r|}
+  \hline
+  $p$ & $q$  & $\sim{}p$ &  $p\wedge{}q$ &  $p\vee{}q$ &  $p\downarrow{}q$  &  $p\Rightarrow{}q$  &  $p\Leftrightarrow{}q$ \\
+  \hline
+  \hline
+  S&S&F&S&S&F&S&S\\
+  \hline
+  S&F&F&F&S&F&F&F\\
+  \hline
+  F&S&S&F&S&F&S&F\\
+  \hline
+  F&F&S&F&F&S&S&S\\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Sætninger og regler}
+
+Grundregler:
+
+\begin{eqnarray}
+p \vee q &\equiv& q \vee p \\
+p \wedge q &\equiv& q \wedge p \\
+p \vee (q \vee r) &\equiv& (p \vee q) \vee r \\
+p \wedge (q \wedge r) &\equiv& (p \wedge q) \wedge r \\
+p \vee (q \wedge r) &\equiv& (p \vee q) \wedge (p \vee r) \\
+p \wedge (q \vee r) &\equiv& (p \wedge q) \vee (p \wedge r) \\
+p \vee p &\equiv& p \\
+p \wedge p &\equiv& p \\
+\sim (\sim p) &\equiv& p \\
+\sim (p \vee q) &\equiv& (\sim p) \wedge (\sim q) \\
+\sim (p \wedge q) &\equiv& (\sim p) \vee (\sim q) 
+\end{eqnarray}
+
+Vigtige sætninger:
+\begin{eqnarray}
+(p\Rightarrow q) &\equiv& ((\sim p) \vee q) \\
+(p \Rightarrow q) &\equiv& (\sim p \Rightarrow \sim q) \\
+(p \Leftrightarrow q) &\equiv& ((p \Rightarrow q) \wedge (q \Rightarrow p)) \\
+\sim (p \Rightarrow q) &\equiv& (p \wedge \sim q) \\
+\sim (p \Leftrightarrow q) &\equiv& ((p \wedge \sim q) \vee (q \wedge \sim p))
+\end{eqnarray}
+
+Flere vigtige sætninger:
+\begin{eqnarray}
+\sim (\forall x~P(x)) &\equiv& \exists x~\sim P(x) \\
+\sim (\exists x~P(x)) &\equiv& \forall x~(\sim P(x)) \\
+\exists x~(P(x) \Rightarrow Q(x)) &\equiv& \forall x~P(x) \Rightarrow \exists x~Q(x) \\
+\exists x~(P(x) \vee Q(x)) &\equiv& \exists x~P(x) \vee \exists x~Q(x) \\
+\forall x~(P(x) \wedge Q(x)) &\equiv& \forall x~P(x) \wedge \forall x~Q(x)
+\end{eqnarray}
+
+\subsection{Metoder for beviser}
+Indhold
 
 \section{Sandsynlighedsregning}
 
