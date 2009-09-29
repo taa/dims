@@ -344,6 +344,24 @@ og opstil et lineært ligningssystem med to ligninger og to ubekendte $u$ og $v$
     \begin{equation}
       (aRb \wedge bRa) \Rightarrow (a=b)
     \end{equation}
+
+    \subsubsection{Transitiv}
+    En relation $R$ på $\mathbb{R}$ er transitiv hvis og kun hvis:
+    \begin{equation}
+      aRb \wedge bRc \Rightarrow aRc
+    \end{equation}
+    Det kan ses på en graf ved at hver gang der er inddirekte vej fra et element til et andet, med 2 hop, så er der også en direkte vej. Et eksempel herpå kan ses her:
+    \begin{figure}[H]
+      \entrymodifiers={++[o][F-]}
+      $$
+      \xymatrix @-0pc {
+        1 \ar[r] & 2 \\
+        3 \ar[u] \ar[ru] \ar[r] &  4 \ar[ul] }
+        $$
+      \caption{Irrefleksiv graf} \label{fig:xy4}
+    \end{figure}
+    \subsubsection{Ækvivalensrelation}
+      En relation $R$ er en ækvivalensrelation hvis den er refleksiv, symmetrisk og transitiv.
     \subsection{$R^\infty$}
 
 $R^\infty$ består af alle tupler i $R$, der er transitivt relateret; dvs. hvis $(x, y) \in R$
