@@ -10,6 +10,9 @@
 
 \newcommand{\Integers}{\mathbb{Z}}
 
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\renewcommand{\labelenumii}{(\Alph{enumii})}
+
 \title{Diskrete matematiske strukturer\\
           Cheat sheet}
 \author {}
@@ -48,7 +51,7 @@
      \end{eqnarray}
      The above concludes GCD(98, 77) = 7
   \subsection{LCM}
-   If $a$, $b$ and $k$ are \in \Integers^+$, and $a | k$ and $b | k$, then $k$ is a common multiple of $a$ and $b$. The smallest such $k$, is called the least common multiple. Denoted:
+   If $a$, $b$ and $k$ are $\in \Integers^+$, and $a | k$ and $b | k$, then $k$ is a common multiple of $a$ and $b$. The smallest such $k$, is called the least common multiple. Denoted:
     $$c = lcm(a, b)$$
     
   \subsection{Base$_n$}
@@ -94,100 +97,146 @@
       Boolsk produkt $(\odot)$ mellem to boolske matricer gøres på følgende måde:
       Lad $A = [a_{ij}]$ og $B= [b_{ij}]$ være $m \times n$ boolske matricer. Så er:
       Ved $A \odot B = C$.
+
 \section{Logik}
-  Indhold
-  \subsection{Regneregler}
-    \subsubsection{Boolske udtryk}
-      \begin{description}
-        \item[$\sim$ (not)] Bla bla.
-        \item[$\wedge$ (and)] Bla bla.
-        \item[$\vee$ (or)]  Bla bla.
-        \item[$\Rightarrow$ (If..then)]  Bla bla.
-        \item[$\Leftrightarrow$ (Equivalence)]  Bla bla.
-      \end{description}
-      \begin{center}
-        \begin{tabular} {|r|r||r|r|r|r|r|r|}
-          \hline
-          $p$ & $q$  & $\sim{}p$ &  $p\wedge{}q$ &  $p\vee{}q$ &  $p\downarrow{}q$  &  $p\Rightarrow{}q$  &  $p\Leftrightarrow{}q$ \\
-          \hline
-          \hline
-          S&S&F&S&S&F&S&S\\
-          \hline
-          S&F&F&F&S&F&F&F\\
-          \hline
-          F&S&S&F&S&F&S&F\\
-          \hline
-          F&F&S&F&F&S&S&S\\
-          \hline
-        \end{tabular}
-      \end{center}
-    \subsubsection{Sætninger og regler}
-      Grundregler:
-      \begin{eqnarray}
-        p \vee q &\equiv& q \vee p \\
-        p \wedge q &\equiv& q \wedge p \\
-        p \vee (q \vee r) &\equiv& (p \vee q) \vee r \\
-        p \wedge (q \wedge r) &\equiv& (p \wedge q) \wedge r \\
-        p \vee (q \wedge r) &\equiv& (p \vee q) \wedge (p \vee r) \\
-        p \wedge (q \vee r) &\equiv& (p \wedge q) \vee (p \wedge r) \\
-        p \vee p &\equiv& p \\
-        p \wedge p &\equiv& p \\
-        \sim (\sim p) &\equiv& p \\
-        \sim (p \vee q) &\equiv& (\sim p) \wedge (\sim q) \\
-        \sim (p \wedge q) &\equiv& (\sim p) \vee (\sim q) 
-      \end{eqnarray}
-      Vigtige sætninger:
-      \begin{eqnarray}
-        (p\Rightarrow q) &\equiv& ((\sim p) \vee q) \\
-        (p \Rightarrow q) &\equiv& (\sim p \Rightarrow \sim q) \\
-        (p \Leftrightarrow q) &\equiv& ((p \Rightarrow q) \wedge (q \Rightarrow p)) \\
-        \sim (p \Rightarrow q) &\equiv& (p \wedge \sim q) \\
-        \sim (p \Leftrightarrow q) &\equiv& ((p \wedge \sim q) \vee (q \wedge \sim p))
-      \end{eqnarray}
-      Flere vigtige sætninger:
-      \begin{eqnarray}
-        \sim (\forall x~P(x)) &\equiv& \exists x~\sim P(x) \\
-        \sim (\exists x~P(x)) &\equiv& \forall x~(\sim P(x)) \\
-        \exists x~(P(x) \Rightarrow Q(x)) &\equiv& \forall x~P(x) \Rightarrow \exists x~Q(x) \\
-        \exists x~(P(x) \vee Q(x)) &\equiv& \exists x~P(x) \vee \exists x~Q(x) \\
-        \forall x~(P(x) \wedge Q(x)) &\equiv& \forall x~P(x) \wedge \forall x~Q(x)
-      \end{eqnarray}
-  \subsection{Metoder for beviser}
-    Indhold
+
+\subsection{Boolske udtryk}
+
+\begin{description}
+\item[$P \Rightarrow Q$] læses som $P$ medfører $Q$, og gælder hvis enten $P$ er falsk,
+  eller hvis $P$ er sand og $Q$ også er sand.
+\item[$P \Leftrightarrow Q$] læses som logisk ækvivalens. Hvis $P$ er sand skal $Q$ også
+  være det, og vice versa.
+\end{description}
+
+\begin{center}
+\begin{tabular} {|r|r||r|r|r|r|r|r|}
+  \hline
+  $p$ & $q$  & $\sim{}p$ &  $p\wedge{}q$ &  $p\vee{}q$ &  $p\downarrow{}q$  &  $p\Rightarrow{}q$  &  $p\Leftrightarrow{}q$ \\
+  \hline
+  \hline
+  S&S&F&S&S&F&S&S\\
+  \hline
+  S&F&F&F&S&F&F&F\\
+  \hline
+  F&S&S&F&S&F&S&F\\
+  \hline
+  F&F&S&F&F&S&S&S\\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Sætninger og regler}
+
+Grundregler:
+
+\begin{eqnarray}
+p \vee q &\equiv& q \vee p \\
+p \wedge q &\equiv& q \wedge p \\
+p \vee (q \vee r) &\equiv& (p \vee q) \vee r \\
+p \wedge (q \wedge r) &\equiv& (p \wedge q) \wedge r \\
+p \vee (q \wedge r) &\equiv& (p \vee q) \wedge (p \vee r) \\
+p \wedge (q \vee r) &\equiv& (p \wedge q) \vee (p \wedge r) \\
+p \vee p &\equiv& p \\
+p \wedge p &\equiv& p \\
+\sim (\sim p) &\equiv& p \\
+\sim (p \vee q) &\equiv& (\sim p) \wedge (\sim q) \\
+\sim (p \wedge q) &\equiv& (\sim p) \vee (\sim q) 
+\end{eqnarray}
+
+Vigtige sætninger:
+\begin{eqnarray}
+(p\Rightarrow q) &\equiv& ((\sim p) \vee q) \\
+(p \Rightarrow q) &\equiv& (\sim p \Rightarrow \sim q) \\
+(p \Leftrightarrow q) &\equiv& ((p \Rightarrow q) \wedge (q \Rightarrow p)) \\
+\sim (p \Rightarrow q) &\equiv& (p \wedge \sim q) \\
+\sim (p \Leftrightarrow q) &\equiv& ((p \wedge \sim q) \vee (q \wedge \sim p))
+\end{eqnarray}
+
+Flere vigtige sætninger:
+\begin{eqnarray}
+\sim (\forall x~P(x)) &\equiv& \exists x~\sim P(x) \\
+\sim (\exists x~P(x)) &\equiv& \forall x~(\sim P(x)) \\
+\exists x~(P(x) \Rightarrow Q(x)) &\equiv& \forall x~P(x) \Rightarrow \exists x~Q(x) \\
+\exists x~(P(x) \vee Q(x)) &\equiv& \exists x~P(x) \vee \exists x~Q(x) \\
+\forall x~(P(x) \wedge Q(x)) &\equiv& \forall x~P(x) \wedge \forall x~Q(x)
+\end{eqnarray}
+
 \section{Sandsynlighedsregning}
-  Indhold
-  \subsection{Permutationer og kombinationer}
-  Indsæt en forklaring på figur \ref{fig:perm} her!
-  \begin{center}
-  \begin{figure}[h!]
+
+\subsection{Permutationer og kombinationer}
+En begivenhed er {\it ordnet}, hvis rækkefølgen af udtagelsen har betydning. Den er
+{\it med tilbagelægning}, hvis det samme objekt kan vælges flere gange.
+
+\begin{figure}[h!]
+    \begin{center}
     \begin{tabular}{|c|c|c|}
-    \hline
-    & Uden tilbagelægning & Med tilbagelægning \\
-    \hline
-    Ordnet  & $_nP_r$ & $n^r$ \\
-    \hline
-    Uordnet & $_nC_r$ & $_{n+r-1}C_r$ \\
-    \hline
+        \hline
+        & Uden tilbagelægning & Med tilbagelægning \\
+        \hline
+        Ordnet  & $_nP_r$ & $n^r$ \\
+        \hline
+        Uordnet & $_nC_r$ & $_{n+r-1}C_r$ \\
+        \hline
     \end{tabular}
-    \caption{Oversigt over formler for permutationer og kombinationer} \label{fig:perm}
-  \end{figure}
     \end{center}
-  hvor
-  \begin{equation}
-    _nP_r=n\cdots{}(n-1)\cdots{}(n-r+1) = \frac{n!}{(n-r)!}
-  \end{equation}
-  og
-  \begin{equation}
-    _nC_r=\frac{n\cdots (n-1) \cdots (n-r+1)}{r\cdot (r-1)\cdots 1} = \frac{n!}{r!(n-r)!}
-  \end{equation}
-  \begin{description}
-  \item[Multiplikationsprincippet] Bla bla
-  \item[Additionsprincippet] Bla bla
-  \end{description}
-  \subsection{Sandsynlighed}
-    Indhold
-  \subsection{Homogene rekurrensligninger}
-    Indhold
+    \caption{Oversigt over formler for permutationer og kombinationer} \label{fig:perm}
+\end{figure}
+
+hvor $_nP_r$ og $_nC_r$ er defineret ved
+
+\begin{eqnarray*}
+    _nP_r &=& n\cdots{}(n-1)\cdots{}(n-r+1) = \frac{n!}{(n-r)!} \\
+    _nC_r &=& \frac{n\cdots (n-1) \cdots (n-r+1)}{r\cdot (r-1)\cdots 1} = \frac{n!}{r!(n-r)!}
+\end{eqnarray*}
+
+\begin{description}
+
+\item[Multiplikationsprincippet] siger, at hvis en begivenhed $A$ kan forekomme på $m$ forskellige
+måder, og en anden, uafhængig begivenhed $B$ kan forekomme på $n$, så er det totale antal måder
+hvorpå de to begivenheder kan ske lig $mn$. E.g. hvis du har tre bluser og to bukser har du
+$3 \cdot 2 = 6$ muligheder.
+
+\item[Additionsprincippet] siger, at hvis en begivenhed $A$ kan ske på $m$ måder, og en anden,
+uafhængig begivenhed $B$ kan ske på $n$ måder, så er der $m + n$ måder som {\it enten} $A$ eller $B$
+kan ske på.
+
+\end{description}
+
+\subsection{Sandsynlighed}
+Indhold
+
+\section{Lineære homogene rekurrensligninger}
+
+For at bestemme et direkte (ikke-rekursivt) udtryk for en lineær homogen rekurrensligning
+af formen $$a_n = r_1a_{n - 1} + r_2a_{n - 2}$$ med to værdier fastlagt som $a_1$ og $a_2$,
+kan følgende opskrift benyttes.
+
+\begin{enumerate}
+
+\item Opstil den karakteristiske ligning $$x^2 = r_1x + r_2$$
+
+\item Find rødderne i dette andengradspolynomium ved hjælp af diskriminanten $d$.
+\label{homorecurrence:roots}
+
+\begin{enumerate}
+\item Hvis $d > 0$, således at der er to forskellige rødder $s_1$ og $s_2$, så vil der
+findes tal $u$ og $v$ således at $$a_n = us_1^n + vns_2^n$$
+
+\item Hvis $d = 0$, således at der er én rod $s$, så vil der findes tal $u$ og $v$ således
+at $$a_n = us^n + vns^n$$
+
+\item Hvis $d < 0$, således at der ikke er nogen reelle rødder, så kan man benytte komplekse
+tal.
+\end{enumerate}
+
+\item Indsæt begyndelsesværdierne $a_1$ og $a_2$ i den relevante formel fra (\ref{homorecurrence:roots})
+og opstil et lineært ligningssystem med to ligninger og to ubekendte $u$ og $v$.
+
+\item Løs dette ligningssystem og indsæt $u$ og $v$ i den relevante formel fra
+(\ref{homorecurrence:roots}).
+
+\end{enumerate}
 
 \section{Relationer}
 
