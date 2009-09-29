@@ -176,21 +176,30 @@
 
 \subsection{Repræsentation}
   En relation kan repræsenteres på mange måder. Herunder vises relationen $R$ på mængden $\{1,2,3,4\}$:
-  Repreæsenteret som ... %TODO
+  Repræsenteret som ... %TODO
   \begin{equation}
     xRy \iff x | y
   \end{equation}
-  Repreæsenteret som et sæt af ordnede par:
+  Repræsenteret som et sæt af ordnede par:
   \begin{equation}
     \{(1,1),(1,2),(1,3),(1,4),(2,2),(2,4),(3,3),(4,4)\}
   \end{equation}
-  Repreæsenteret som graf:
+  Repræsenteret som graf:
   \begin{figure}[H]
     \entrymodifiers={++[o][F-]}
     \xymatrix @-0pc {
       1 \ar@(l,u) \ar[r] \ar[d] \ar[d,r]   & 2 \ar@(r,u) \ar[d] \\
       3 \ar@(l,d) &  4 \ar@(r,d) 
     }
+  \end{figure}\\
+  Repræsenteret som boolsk matrix:
+  \begin{figure}[H]
+    \begin{bmatrix}
+      1 & 1 & 1 & 1 \\
+      0 & 1 & 0 & 1 \\
+      0 & 0 & 1 & 0 \\
+      0 & 0 & 0 & 1
+    \end{bmatrix}
   \end{figure}
 
 \subsection{$R^\infty$}
