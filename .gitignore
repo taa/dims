@@ -9,3 +9,4 @@
 *.run.*
 *.toc
 *.toc.*
+*.make
