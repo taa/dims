@@ -10,3 +10,4 @@
 *.toc
 *.toc.*
 *.make
+*.out
