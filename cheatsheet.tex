@@ -53,10 +53,30 @@
   \subsection{LCM}
    If $a$, $b$ and $k$ are $\in \Integers^+$, and $a | k$ and $b | k$, then $k$ is a common multiple of $a$ and $b$. The smallest such $k$, is called the least common multiple. Denoted:
     $$c = lcm(a, b)$$
+    
   \subsection{Base$_n$}
     Indhold
-  \subsection{Primfactoresering}
-    Indhold
+  \subsection{Primfaktorisering}
+   Der findes forskellige måder hvorpå man kan udføre primfaktorisering. En måde er at gentagende dividere med primtal.\\
+   \textbf{Eksempel 1:} Primfaktorisering af 96
+   \begin{eqnarray}
+    96\ \%\ \textcolor{red}{2} &=& 48 \nonumber\\
+    48\ \%\ \textcolor{red}{2} &=& 24 \nonumber\\
+    24\ \%\ \textcolor{red}{2} &=& 12 \nonumber\\
+    12\ \%\ \textcolor{red}{2} &=& 6 \nonumber\\
+    6\ \%\ \textcolor{red}{2} &=& 3 \nonumber\\
+    3\ \%\ \textcolor{red}{3} &=& 1 \nonumber
+   \end{eqnarray}
+   $96 = 2 * 2 * 2 * 2 * 2 * 3$\\\\
+   \textbf{Eksempel 2:} Primfaktorisering af 120
+   \begin{eqnarray}
+    120\ \%\ \textcolor{red}{2} &=& 60 \nonumber\\
+    60\ \%\ \textcolor{red}{2} &=& 30 \nonumber\\
+    30\ \%\ \textcolor{red}{2} &=& 15 \nonumber\\
+    15\ \%\ \textcolor{red}{3} &=& 5 \nonumber\\
+    5\ \%\ \textcolor{red}{5} &=& 1 \nonumber
+   \end{eqnarray}
+   $120 = 2 * 2 * 2 * 3 * 5$
 \section{Matricer}
   Indhold
   \subsection{Produkt}
@@ -96,72 +116,79 @@
       Boolsk produkt $(\odot)$ mellem to boolske matricer gøres på følgende måde:
       Lad $A = [a_{ij}]$ og $B= [b_{ij}]$ være $m \times n$ boolske matricer. Så er:
       Ved $A \odot B = C$.
+
 \section{Logik}
-  Indhold
-  \subsection{Regneregler}
-    \subsubsection{Boolske udtryk}
-      \begin{description}
-        \item[$\sim$ (not)] Bla bla.
-        \item[$\wedge$ (and)] Bla bla.
-        \item[$\vee$ (or)]  Bla bla.
-        \item[$\Rightarrow$ (If..then)]  Bla bla.
-        \item[$\Leftrightarrow$ (Equivalence)]  Bla bla.
-      \end{description}
-      \begin{center}
-        \begin{tabular} {|r|r||r|r|r|r|r|r|}
-          \hline
-          $p$ & $q$  & $\sim{}p$ &  $p\wedge{}q$ &  $p\vee{}q$ &  $p\downarrow{}q$  &  $p\Rightarrow{}q$  &  $p\Leftrightarrow{}q$ \\
-          \hline
-          \hline
-          S&S&F&S&S&F&S&S\\
-          \hline
-          S&F&F&F&S&F&F&F\\
-          \hline
-          F&S&S&F&S&F&S&F\\
-          \hline
-          F&F&S&F&F&S&S&S\\
-          \hline
-        \end{tabular}
-      \end{center}
-    \subsubsection{Sætninger og regler}
-      Grundregler:
-      \begin{eqnarray}
-        p \vee q &\equiv& q \vee p \\
-        p \wedge q &\equiv& q \wedge p \\
-        p \vee (q \vee r) &\equiv& (p \vee q) \vee r \\
-        p \wedge (q \wedge r) &\equiv& (p \wedge q) \wedge r \\
-        p \vee (q \wedge r) &\equiv& (p \vee q) \wedge (p \vee r) \\
-        p \wedge (q \vee r) &\equiv& (p \wedge q) \vee (p \wedge r) \\
-        p \vee p &\equiv& p \\
-        p \wedge p &\equiv& p \\
-        \sim (\sim p) &\equiv& p \\
-        \sim (p \vee q) &\equiv& (\sim p) \wedge (\sim q) \\
-        \sim (p \wedge q) &\equiv& (\sim p) \vee (\sim q) 
-      \end{eqnarray}
-      Vigtige sætninger:
-      \begin{eqnarray}
-        (p\Rightarrow q) &\equiv& ((\sim p) \vee q) \\
-        (p \Rightarrow q) &\equiv& (\sim p \Rightarrow \sim q) \\
-        (p \Leftrightarrow q) &\equiv& ((p \Rightarrow q) \wedge (q \Rightarrow p)) \\
-        \sim (p \Rightarrow q) &\equiv& (p \wedge \sim q) \\
-        \sim (p \Leftrightarrow q) &\equiv& ((p \wedge \sim q) \vee (q \wedge \sim p))
-      \end{eqnarray}
-      Flere vigtige sætninger:
-      \begin{eqnarray}
-        \sim (\forall x~P(x)) &\equiv& \exists x~\sim P(x) \\
-        \sim (\exists x~P(x)) &\equiv& \forall x~(\sim P(x)) \\
-        \exists x~(P(x) \Rightarrow Q(x)) &\equiv& \forall x~P(x) \Rightarrow \exists x~Q(x) \\
-        \exists x~(P(x) \vee Q(x)) &\equiv& \exists x~P(x) \vee \exists x~Q(x) \\
-        \forall x~(P(x) \wedge Q(x)) &\equiv& \forall x~P(x) \wedge \forall x~Q(x)
-      \end{eqnarray}
-  \subsection{Metoder for beviser}
-    Indhold
+
+\subsection{Boolske udtryk}
+
+\begin{description}
+\item[$P \Rightarrow Q$] læses som $P$ medfører $Q$, og gælder hvis enten $P$ er falsk,
+  eller hvis $P$ er sand og $Q$ også er sand.
+\item[$P \Leftrightarrow Q$] læses som logisk ækvivalens. Hvis $P$ er sand skal $Q$ også
+  være det, og vice versa.
+\end{description}
+
+\begin{center}
+\begin{tabular} {|r|r||r|r|r|r|r|r|}
+  \hline
+  $p$ & $q$  & $\sim{}p$ &  $p\wedge{}q$ &  $p\vee{}q$ &  $p\downarrow{}q$  &  $p\Rightarrow{}q$  &  $p\Leftrightarrow{}q$ \\
+  \hline
+  \hline
+  S&S&F&S&S&F&S&S\\
+  \hline
+  S&F&F&F&S&F&F&F\\
+  \hline
+  F&S&S&F&S&F&S&F\\
+  \hline
+  F&F&S&F&F&S&S&S\\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Sætninger og regler}
+
+Grundregler:
+
+\begin{eqnarray}
+p \vee q &\equiv& q \vee p \\
+p \wedge q &\equiv& q \wedge p \\
+p \vee (q \vee r) &\equiv& (p \vee q) \vee r \\
+p \wedge (q \wedge r) &\equiv& (p \wedge q) \wedge r \\
+p \vee (q \wedge r) &\equiv& (p \vee q) \wedge (p \vee r) \\
+p \wedge (q \vee r) &\equiv& (p \wedge q) \vee (p \wedge r) \\
+p \vee p &\equiv& p \\
+p \wedge p &\equiv& p \\
+\sim (\sim p) &\equiv& p \\
+\sim (p \vee q) &\equiv& (\sim p) \wedge (\sim q) \\
+\sim (p \wedge q) &\equiv& (\sim p) \vee (\sim q) 
+\end{eqnarray}
+
+Vigtige sætninger:
+\begin{eqnarray}
+(p\Rightarrow q) &\equiv& ((\sim p) \vee q) \\
+(p \Rightarrow q) &\equiv& (\sim p \Rightarrow \sim q) \\
+(p \Leftrightarrow q) &\equiv& ((p \Rightarrow q) \wedge (q \Rightarrow p)) \\
+\sim (p \Rightarrow q) &\equiv& (p \wedge \sim q) \\
+\sim (p \Leftrightarrow q) &\equiv& ((p \wedge \sim q) \vee (q \wedge \sim p))
+\end{eqnarray}
+
+Flere vigtige sætninger:
+\begin{eqnarray}
+\sim (\forall x~P(x)) &\equiv& \exists x~\sim P(x) \\
+\sim (\exists x~P(x)) &\equiv& \forall x~(\sim P(x)) \\
+\exists x~(P(x) \Rightarrow Q(x)) &\equiv& \forall x~P(x) \Rightarrow \exists x~Q(x) \\
+\exists x~(P(x) \vee Q(x)) &\equiv& \exists x~P(x) \vee \exists x~Q(x) \\
+\forall x~(P(x) \wedge Q(x)) &\equiv& \forall x~P(x) \wedge \forall x~Q(x)
+\end{eqnarray}
 
 \section{Sandsynlighedsregning}
 
 \subsection{Permutationer og kombinationer}
 En begivenhed er {\it ordnet}, hvis rækkefølgen af udtagelsen har betydning. Den er
 {\it med tilbagelægning}, hvis det samme objekt kan vælges flere gange.
+
+I figur \ref{fig:perm} angiver $n$ antal mulige objekter, og $r$ hvor mange objekter,
+der skal udtages.
 
 \begin{figure}[h!]
     \begin{center}
@@ -197,9 +224,6 @@ uafhængig begivenhed $B$ kan ske på $n$ måder, så er der $m + n$ måder som 
 kan ske på.
 
 \end{description}
-
-\subsection{Sandsynlighed}
-Indhold
 
 \section{Lineære homogene rekurrensligninger}
 
