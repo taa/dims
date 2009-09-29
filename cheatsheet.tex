@@ -200,8 +200,38 @@ kan ske på.
 
 \subsection{Sandsynlighed}
 Indhold
-\subsection{Homogene rekurrensligninger}
-Indhold
+
+\section{Lineære homogene rekurrensligninger}
+
+For at bestemme et direkte (ikke-rekursivt) udtryk for en lineær homogen rekurrensligning
+af formen $$a_n = r_1a_{n - 1} + r_2a_{n - 2}$$ med to værdier fastlagt som $a_1$ og $a_2$,
+kan følgende opskrift benyttes.
+
+\begin{enumerate}
+
+\item Opstil den karakteristiske ligning $$x^2 = r_1x + r_2$$
+
+\item Find rødderne i dette andengradspolynomium ved hjælp af diskriminanten $d$.
+\label{homorecurrence:roots}
+
+\begin{enumerate}
+\item Hvis $d > 0$, således at der er to forskellige rødder $s_1$ og $s_2$, så vil der
+findes tal $u$ og $v$ således at $$a_n = us_1^n + vns_2^n$$
+
+\item Hvis $d = 0$, således at der er én rod $s$, så vil der findes tal $u$ og $v$ således
+at $$a_n = us^n + vns^n$$
+
+\item Hvis $d < 0$, således at der ikke er nogen reelle rødder, så kan man benytte komplekse
+tal.
+\end{enumerate}
+
+\item Indsæt begyndelsesværdierne $a_1$ og $a_2$ i den relevante formel fra (\ref{homorecurrence:roots})
+og opstil et lineært ligningssystem med to ligninger og to ubekendte $u$ og $v$.
+
+\item Løs dette ligningssystem og indsæt $u$ og $v$ i den relevante formel fra
+(\ref{homorecurrence:roots}).
+
+\end{enumerate}
 
 \section{Relationer}
 
