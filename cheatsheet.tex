@@ -156,8 +156,8 @@
   Indhold
   \subsection{Permutationer og kombinationer}
   Indsæt en forklaring på figur \ref{fig:perm} her!
-  \begin{figure}[h!]
   \begin{center}
+  \begin{figure}[h!]
     \begin{tabular}{|c|c|c|}
     \hline
     & Uden tilbagelægning & Med tilbagelægning \\
@@ -168,8 +168,8 @@
     \hline
     \end{tabular}
     \caption{Oversigt over formler for permutationer og kombinationer} \label{fig:perm}
+  \end{figure}
     \end{center}
-  \end{figure}\\
   hvor
   \begin{equation}
     _nP_r=n\cdots{}(n-1)\cdots{}(n-r+1) = \frac{n!}{(n-r)!}
@@ -190,23 +190,23 @@
 \section{Relationer}
 
 \subsection{Repræsentation}
-  En relation kan repræsenteres på mange måder. Herunder vises relationen $R$ på mængden $\{1,2,3,4\}$:
-  Repræsenteret som ... %TODO
+ En relation kan repræsenteres på mange måder. Herunder vises relationen $R$ på mængden $\{ 1,2,3,4 \}$:\\
+  Repræsenteret som ...formel/udtryk?
   \begin{equation}
     xRy \iff x | y
   \end{equation}
   Repræsenteret som et sæt af ordnede par:
   \begin{equation}
-    \{(1,1),(1,2),(1,3),(1,4),(2,2),(2,4),(3,3),(4,4)\}
+    \{ (1,1),(1,2),(1,3),(1,4),(2,2),(2,4),(3,3),(4,4) \}
   \end{equation}
   Repræsenteret som graf:
   \begin{figure}[H]
     \entrymodifiers={++[o][F-]}
     \xymatrix @-0pc {
-      1 \ar@(l,u) \ar[r] \ar[d] \ar[d,r]   & 2 \ar@(r,u) \ar[d] \\
-      3 \ar@(l,d) &  4 \ar@(r,d) 
-    }
-  \end{figure}\\
+      1 \ar@(l,u) \ar[r] \ar[d] \ar[dr] & 2 \ar@(r,u) \ar[d] \\
+      3 \ar@(l,d) &  4 \ar@(r,d)}
+    \caption{Relation som graf} \label{fig:xy1}
+  \end{figure}
   Repræsenteret som boolsk matrix:
   \begin{figure}[H]
     $$
@@ -217,15 +217,23 @@
       0 & 0 & 0 & 1
     \end{bmatrix}
     $$
+    \caption{Relation som boolsk matrix} \label{fig:bm1}
   \end{figure}
+\subsection{Egenskaber}
+  Herunder noget om de egenskaber relationer kan have.
+  \subsubsection{Refleksiv og irrefleksiv}
+    En relation $R$ på $\mathbb{R}$ er refleksiv hvis:
+    \begin{equation}
+      \forall x \in \mathbb{R}: xRx
+    \end{equation}
+    Det kan også ses i grafen, hvis alle elementer har pile til sig selv, som i figur (\ref{fig:xy1}).
 
+    Det kan også ses på matrixform, hvis diagonalen har 1-taller, som i figur (\ref{fig:bm1}).
 \subsection{$R^\infty$}
 
 $R^\infty$ består af alle tupler i $R$, der er transitivt relateret; dvs. hvis $(x, y) \in R$
 og $(y, z) \in R$, så vil $(x, z) \in R^\infty$. Derudover gælder $R \subseteq R^\infty$.
 
 \section{Kapitel 4 og frem..}
-
-
 
 \end{document}
