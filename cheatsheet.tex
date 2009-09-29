@@ -5,6 +5,7 @@
 \usepackage{pdfpages}
 \usepackage[colorlinks=true,linkcolor=black]{hyperref}
 \usepackage{float}
+\usepackage[all]{xy}
 
 \title{Diskrete matematiske strukturer\\
           Cheat sheet}
@@ -72,7 +73,7 @@
                   \end{bmatrix}
       \end{equation}
       Ved $A \wedge B = C$.
-    \subsubsection{Boolsk produkt}
+    \subsubsection{Boolsk produkt} %TODO
       Boolsk produkt $(\odot)$ mellem to boolske matricer gøres på følgende måde:
       Lad $A = [a_{ij}]$ og $B= [b_{ij}]$ være $m \times n$ boolske matricer. Så er:
       Ved $A \odot B = C$.
@@ -173,6 +174,11 @@
 
 \section{Relationer}
 
+\subsection{Repræsentation}
+  En relation kan repræsenteres på mange måder. Herunder vises relationen $R$ på mængden $\{1,2,3,4\}$:
+  \begin{equation}
+    xRy \iff x | y
+  \end{equation}
 \subsection{$R^\infty$}
 
 $R^\infty$ består af alle tupler i $R$, der er transitivt relateret; dvs. hvis $(x, y) \in R$
