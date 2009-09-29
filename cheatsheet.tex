@@ -6,6 +6,9 @@
 \usepackage[colorlinks=true,linkcolor=black]{hyperref}
 \usepackage{float}
 
+
+\newcommand{\Integers}{\mathbb{Z}}
+
 \title{Diskrete matematiske strukturer\\
           Cheat sheet}
 \author {}
@@ -28,9 +31,21 @@
 \section{Heltal}
   Indhold
   \subsection{GCD}
-    Indhold
+    If $a$, $b$ and $k \in \Integers^+$, and $k | a$ and $k | b$, then $k$ is a common divisor of $a$ and $b$. If $d$ is the largest of such $k$ it's called the greatest common divisor. Denoted:
+    $$d = GCD(a, b)$$
+    $d$ is the greatest common divisor of $a$ and $b$ and is also a multiple of all lesser divisors.
     \subsubsection{Euklids algoritme}
-      Indhold
+     Euklids algoritme is a way to find the greatest common divisor and is easiest illustrated by example.\\
+     Theory: Integer divide $a$ by $b$ until the rest is zero.\\
+     Example: GCD(273, 98). Let $a$ be 273 and $b$ be 98.
+     \begin{eqnarray}
+      divide\ 273\ by\ 98:	273 = 2 \cdot 98 + 77\\
+      divide\ 98\ by\ 77:	98 = 1 \cdot 77 + 21\\
+      divide\ 77\ by\ 21:	77 = 3 \cdot 21 + 14\\
+      divide\ 21\ by\ 14:	21 = 1 \cdot 14 + 7\\
+      divide\ 14\ by\ 7:	14 = 2 \cdot 7 + 0
+     \end{eqnarray}
+     The above concludes GCD(98, 77) = 7
   \subsection{LCM}
     Indhold
   \subsection{Base$_n$}
