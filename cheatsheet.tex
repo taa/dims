@@ -203,6 +203,9 @@ Flere vigtige sætninger:
 En begivenhed er {\it ordnet}, hvis rækkefølgen af udtagelsen har betydning. Den er
 {\it med tilbagelægning}, hvis det samme objekt kan vælges flere gange.
 
+I figur \ref{fig:perm} angiver $n$ antal mulige objekter, og $r$ hvor mange objekter,
+der skal udtages.
+
 \begin{figure}[h!]
     \begin{center}
     \begin{tabular}{|c|c|c|}
@@ -237,9 +240,6 @@ uafhængig begivenhed $B$ kan ske på $n$ måder, så er der $m + n$ måder som 
 kan ske på.
 
 \end{description}
-
-\subsection{Sandsynlighed}
-Indhold
 
 \section{Lineære homogene rekurrensligninger}
 
@@ -288,9 +288,11 @@ og opstil et lineært ligningssystem med to ligninger og to ubekendte $u$ og $v$
   Repræsenteret som graf:
   \begin{figure}[H]
     \entrymodifiers={++[o][F-]}
+    $$
     \xymatrix @-0pc {
       1 \ar@(l,u) \ar[r] \ar[d] \ar[dr] & 2 \ar@(r,u) \ar[d] \\
       3 \ar@(l,d) &  4 \ar@(r,d)}
+      $$
     \caption{Relation som graf} \label{fig:xy1}
   \end{figure}
   Repræsenteret som boolsk matrix:
@@ -307,7 +309,7 @@ og opstil et lineært ligningssystem med to ligninger og to ubekendte $u$ og $v$
   \end{figure}
 \subsection{Egenskaber}
   Herunder noget om de egenskaber relationer kan have.
-  \subsubsection{Refleksiv og irrefleksiv}
+  \subsubsection{Refleksiv}
     En relation $R$ på $\mathbb{R}$ er refleksiv hvis:
     \begin{equation}
       \forall x \in \mathbb{R}: xRx
@@ -315,7 +317,92 @@ og opstil et lineært ligningssystem med to ligninger og to ubekendte $u$ og $v$
     Det kan også ses i grafen, hvis alle elementer har pile til sig selv, som i figur (\ref{fig:xy1}).
 
     Det kan også ses på matrixform, hvis diagonalen har 1-taller, som i figur (\ref{fig:bm1}).
-\subsection{$R^\infty$}
+  \subsubsection{Irrefleksiv}
+    En relation $R$ på $\mathbb{R}$ er irrefleksiv hvis:
+    \begin{equation}
+      \forall x \in \mathbb{R}: x\not{R}x %TODO Skal lave et overstreget R
+    \end{equation}
+    Det kan ses i en graf, ved at \underline{ingen} af elementerne har en pil til sig selv. Fx:
+  \begin{figure}[H]
+    \entrymodifiers={++[o][F-]}
+    $$
+    \xymatrix @-0pc {
+      1 \ar[r] \ar@/^/[d] \ar@/^/[dr] & 2 \ar[d] \\
+      3 \ar@/^/[u] &  4 \ar[l] \ar@/^/[lu]}
+      $$
+    \caption{Irrefleksiv graf} \label{fig:xy2}
+  \end{figure}
+  Det kan ses i den boolske matrix ved at diagonalen er $0$ fx:
+  \begin{figure}[H]
+    $$
+    \begin{bmatrix}
+      0 & 1 & 1 & 1 \\
+      1 & 0 & 0 & 1 \\
+      0 & 0 & 0 & 0 \\
+      1 & 1 & 0 & 0
+    \end{bmatrix}
+    $$
+    \caption{Irrefleksiv relation som boolsk matrix} \label{fig:bm2}
+  \end{figure}
+  \subsubsection{Symmetrisk}
+    En relation $R$ på $\mathbb{R}$ er symmetrisk, hvis og kun hvis den overholder:
+    \begin{equation}
+      aRb \Rightarrow bRa
+    \end{equation}
+    Det kan ses på en graf, hvis der for hvert element hvorfra der kommer en pil, også går en den modsatte vej. Fx:
+    \begin{figure}[H]
+      \entrymodifiers={++[o][F-]}
+      $$
+      \xymatrix @-0pc {
+        1 \ar@/^/[r] \ar@/^/[d]  & 2 \ar@/^/[l] \\
+        3 \ar@/^/[u] \ar@/^/[r] &  4 \ar@/^/[l]  }
+        $$
+      \caption{Irrefleksiv graf} \label{fig:xy3}
+    \end{figure}
+    Det kan ses på den boolske matrixform ved at se om matricen kan spejles i sin diagonal, som fx:
+    \begin{figure}[H]
+      $$
+      \begin{bmatrix}
+        0 & 1 & 0 & 1 \\
+        1 & 0 & 0 & 1 \\
+        0 & 0 & 0 & 0 \\
+        1 & 1 & 0 & 0
+      \end{bmatrix}
+      $$
+      \caption{Irrefleksiv relation som boolsk matrix} \label{fig:bm3}
+    \end{figure}
+    \subsubsection{Asymmetrisk}
+    En relation er asymmetrisk, hvis og kun hvis følgende gælder:
+    \begin{equation}
+      aRb \Rightarrow b\not Ra
+    \end{equation}
+    Det kan ses på en graf, hvis der for ingen pile mellem 2 elementer, også går en pil den anden vej. Et eks. på det kan ses i figur (\ref{fig:xy1}).
+
+    Ligeledes kan det ses i en boolsk matrix, hvis der ikke kan spejles nogen elementer.
+    \subsubsection{Antisymmetrisk}
+    En relation er antisymmetrisk, hvis og kun hvis nedenstående gælder:
+    \begin{equation}
+      (aRb \wedge bRa) \Rightarrow (a=b)
+    \end{equation}
+
+    \subsubsection{Transitiv}
+    En relation $R$ på $\mathbb{R}$ er transitiv hvis og kun hvis:
+    \begin{equation}
+      aRb \wedge bRc \Rightarrow aRc
+    \end{equation}
+    Det kan ses på en graf ved at hver gang der er inddirekte vej fra et element til et andet, med 2 hop, så er der også en direkte vej. Et eksempel herpå kan ses her:
+    \begin{figure}[H]
+      \entrymodifiers={++[o][F-]}
+      $$
+      \xymatrix @-0pc {
+        1 \ar[r] & 2 \\
+        3 \ar[u] \ar[ru] \ar[r] &  4 \ar[ul] }
+        $$
+      \caption{Irrefleksiv graf} \label{fig:xy4}
+    \end{figure}
+    \subsubsection{Ækvivalensrelation}
+      En relation $R$ er en ækvivalensrelation hvis den er refleksiv, symmetrisk og transitiv.
+    \subsection{$R^\infty$}
 
 $R^\infty$ består af alle tupler i $R$, der er transitivt relateret; dvs. hvis $(x, y) \in R$
 og $(y, z) \in R$, så vil $(x, z) \in R^\infty$. Derudover gælder $R \subseteq R^\infty$.
