@@ -40,8 +40,17 @@
     \item Ordensrelationer % Lasse
   \end{enumerate}
 \section{Faktorisering}
- Givet polynomiet $ax^n + bx^{n-1} + cx^{n-2} + ... dx + e = 0$ med rødderne $r_1, r_2, ..., r_n$\\
- $a(x - r_1)(x - r_2)...(x-r_n)=0$
+ Givet polynomiet $ax^n + bx^{n-1} + cx^{n-2} + ... dx + e = 0$ med rødderne $r_1, r_2, ..., r_n$ kan skrives paa foelgende form $a(x - r_1)(x - r_2)...(x-r_n)=0$.\\
+ 
+\section{Kompleks Faktorisering}
+\section{Polynomiers division}
+ Eksemple: Division af $p = x^5 - 6x^3 + 6x^2 + 5x + 12$ med $q = x^2 + 2x + 3$\\
+ Højestegradsleddet i $p$ divideres med højestegradsleddet i $q$.
+ $$d_1 = \frac{x^5}{x^2} = x^3$$
+ Resultatet, $d_1$, ganges med $q$ og trækkes fra $p$. Dvs.
+ $$p - d_1 \cdot q = p - x^3(x^2 + 2x + 3) = p - (x^5 + 2x^4 + 3x^3) = -2x^4 - 9x^3 + 6x^2 + 5x + 12$$
+ Derved har vi et nyt polynomium, en grad lavere, som igen kan divideres med $q$.\\\\
+ Metoden er at det højeste led i dividenden (det der divideres) divideres med højeste led i divisoren. Hele divsoren ganges med kvotienten og trækkes fra. Ny division osv.
 
 \section{Komplekse tal}
  Et komplekst tal bestaar af et reelt- og et imaginaert tal. Det kan skrives paa formen $a + bi$. Hvor $a$ og $b$ er reelle tal. Og $i$ er imaginaer delen som er defineret som $i^2 = -1$.
